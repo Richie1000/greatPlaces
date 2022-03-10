@@ -17,6 +17,7 @@ class GreatPlaces with ChangeNotifier {
     _items.add(newPlace);
     print("object added");
     notifyListeners();
+<<<<<<< HEAD
     DBHelper.insert('user_places', {'id': newPlace.id, 'title':newPlace.title, 'image': newPlace.image.path});
   }
 
@@ -24,5 +25,7 @@ class GreatPlaces with ChangeNotifier {
     final dataList = await DBHelper.getData('user_places');
     _items = dataList.map((item) =>Place(id: item['id'], title: item['title'], image:File(item['image']), location: null)).toList();
     notifyListeners();
+=======
+>>>>>>> 360408882ee1acaa59eb62c6d0e0077b5a6d0976
   }
 }
